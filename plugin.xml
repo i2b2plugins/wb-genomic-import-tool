@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="edu.harvard.i2b2.eclipse.plugins.genomicsImport"
+   name="Import Big Data"
+   version="1.7"
+   provider-name="i2b2.harvard.edu">
+   
+	<extension
+		point="org.eclipse.ui.views">
+		 <category
+         	id="edu.harvard.i2b2.eclipse.plugins.genomicsImport.category"
+         	name="Genomics Import Category">
+   		</category>
+		<view
+         	category="edu.harvard.i2b2.eclipse.plugins.genomicsImport.category"
+         	class="edu.harvard.i2b2.eclipse.plugins.importBigData.views.ImportBigDataView"
+         	icon="icons/non-core-cell.gif"
+         	id="edu.harvard.i2b2.eclipse.plugins.importBigData.views.importBigDataView"
+         	name="Genomics Import"/>
+         <view
+         	category="edu.harvard.i2b2.eclipse.plugins.genomicsImport.category"
+         	class="edu.harvard.i2b2.eclipse.plugins.importBigData.status.BulkLoadStatusView"
+         	icon="icons/non-core-cell.gif"
+         	id="edu.harvard.i2b2.eclipse.plugins.importBigData.status.bulkLoadStatusView"
+         	name="Bulk Loader Status"/>
+	</extension>
+	<extension
+		point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="edu.harvard.i2b2.eclipse.perspective">
+        	 <view
+               id="edu.harvard.i2b2.eclipse.plugins.importBigData.views.importBigDataView"
+               ratio="0.75"
+               relationship="bottom"
+               relative="org.eclipse.ui.editorss">
+         	</view>
+         	<view
+               id="edu.harvard.i2b2.eclipse.plugins.importBigData.status.bulkLoadStatusView"
+               ratio="0.75"
+               relationship="bottom"
+               relative="org.eclipse.ui.editorss">
+         	</view>
+      </perspectiveExtension>
+	</extension>
+	<extension
+		point="org.eclipse.ui.viewActions">
+		<viewContribution
+			id="edu.harvard.i2b2.eclipse.plugins.importBigData.viewActions"
+			targetID="edu.harvard.i2b2.eclipse.plugins.importBigData.views.importBigDataView">
+			<action 
+				class="edu.harvard.i2b2.eclipse.plugins.importBigData.views.ViewStackToolbarActionDelegate" 
+				icon="icons/xmlstack.gif" 
+				id="edu.harvard.i2b2.eclipse.plugins.importBigData.views.viewResponseMessageStack" 
+				label="XMLMessageStack" 
+				style="push" 
+				toolbarPath="additions" 
+				tooltip="Display the XML message stack"/>            
+		</viewContribution>
+	</extension>
+</plugin>
