@@ -1,0 +1,12 @@
+# Ignore these folders and files, information for Eclipse 
+# Build and Release Folders
+/classes/
+/gensrc/
+/genlib/
+
+# Eclipse Project
+*.project
+
+# Other files and folders
+.settings/
+/.DS_Store
